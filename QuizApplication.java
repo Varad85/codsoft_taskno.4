@@ -28,5 +28,11 @@ public class QuizApplication {
         while (true) {
             String userName = getUserName();
             User currentUser = userMap.getOrDefault(userName, new User(userName));
+
+            showRules();
+            if (!getUserConsent()) {
+                System.out.println("Come back next time!");
+                break;
+            }
 }
     }
