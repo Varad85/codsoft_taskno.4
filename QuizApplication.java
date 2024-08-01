@@ -90,4 +90,37 @@ private static List<String[]> getRandomQuestions(int count) {
     Collections.shuffle(questionPool);
     return questionPool.subList(0, count);
 }
+
+private static void presentQuestion(String[] question) {
+    System.out.println(question[0]);
+    for (int i = 1; i <= 4; i++) {
+        System.out.println(i + ". " + question[i]);
+    }
+
+    isAnswered = false;
+    isTimeUp = false;
+    timer = new Timer();
+    timer.schedule(new TimerTask() {
+        @Override
+        public void run() {
+            if (!isAnswered) {
+                System.out.println("\nTime's up!");
+                isTimeUp = true;
+                evaluateAnswer(question, 0);
+                synchronized (scanner) {
+                    scanner.notify();
+                }
+            }
+        }
+    }, timeLimit * 1000);
+
+    synchronized (scanner) {
+        int answer = getUserAnswer();
+        if (!isTimeUp) {
+            isAnswered = true;
+            timer.cancel();
+            evaluateAnswer(question, answer);
+        }
+    }
+}
 }
