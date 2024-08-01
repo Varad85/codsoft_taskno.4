@@ -36,5 +36,10 @@ public class QuizApplication {
             }
             score = 0; // Reset score for new game
             System.out.println("Starting the Quiz!");
+
+            List<String[]> questions = getRandomQuestions(questionCount);
+            for (String[] question : questions) {
+                presentQuestion(question);
+            }
 }
     }
