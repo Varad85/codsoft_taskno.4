@@ -153,4 +153,19 @@ private static void evaluateAnswer(String[] question, int answer) {
         System.out.println("Incorrect. The correct answer is " + correctAnswer + ".");
     }
 }
+
+private static void displayResult(List<String[]> questions, User currentUser) {
+    System.out.println("\nQuiz Over!");
+    System.out.println("Your score: " + score + "/" + questionCount);
+    System.out.println("\nCorrect Answers:");
+    for (String[] question : questions) {
+        int correctAnswerIndex = Integer.parseInt(question[5]);
+        String correctAnswer = question[correctAnswerIndex];
+        System.out.println("Q: " + question[0] + " Correct answer: " + correctAnswer);
+    }
+    System.out.println("\nUser Statistics:");
+    System.out.println("Name: " + currentUser.getName());
+    System.out.println("Number of attempts: " + currentUser.getAttempts());
+    System.out.println("Average score: " + currentUser.getAverageScore());
+}
 }
