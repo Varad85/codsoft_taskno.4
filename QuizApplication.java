@@ -63,4 +63,15 @@ private static String getUserName() {
     return (firstName + " " + lastName).toLowerCase();
 }
 
+private static void showRules() {
+    System.out.println("Quiz Rules:");
+    System.out.println("- This quiz is about capitals of countries.");
+    System.out.println("- You have 15 seconds to answer each question.");
+    System.out.println("- There are 5 questions in total.");
+    System.out.println("-Answering each question is mandatory.");
+    System.out.println("-Next question won't be displayed until you select an option for current question.");
+    System.out.println("-If user selects option after 15 seconds,that answer will not be evaluated.");
+    System.out.println("- Your final score will be displayed at the end of the quiz.");
+    System.out.print("Do you want to continue? (yes/no): ");
+}
 }
