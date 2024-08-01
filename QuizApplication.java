@@ -34,5 +34,7 @@ public class QuizApplication {
                 System.out.println("Come back next time!");
                 break;
             }
+            score = 0; // Reset score for new game
+            System.out.println("Starting the Quiz!");
 }
     }
