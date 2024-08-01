@@ -123,4 +123,21 @@ private static void presentQuestion(String[] question) {
         }
     }
 }
+
+private static int getUserAnswer() {
+    System.out.print("Your answer (1-4): ");
+    while (true) {
+        try {
+            String input = scanner.next();
+            int answer = Integer.parseInt(input);
+            if (answer < 1 || answer > 4) {
+                System.out.print("Invalid choice. Please enter a number between 1 and 4: ");
+            } else {
+                return answer;
+            }
+        } catch (NumberFormatException e) {
+            System.out.print("Invalid input. Please enter a number between 1 and 4: ");
+        }
+    }
+}
 }
