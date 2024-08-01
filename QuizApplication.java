@@ -54,4 +54,13 @@ public class QuizApplication {
             }
     }
 }
+
+private static String getUserName() {
+    System.out.print("Enter your first name: ");
+    String firstName = scanner.next();
+    System.out.print("Enter your last name: ");
+    String lastName = scanner.next();
+    return (firstName + " " + lastName).toLowerCase();
+}
+
 }
