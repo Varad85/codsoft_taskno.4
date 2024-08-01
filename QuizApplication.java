@@ -74,4 +74,15 @@ private static void showRules() {
     System.out.println("- Your final score will be displayed at the end of the quiz.");
     System.out.print("Do you want to continue? (yes/no): ");
 }
+
+private static boolean getUserConsent() {
+    String consent = scanner.next().toLowerCase();
+    return consent.equals("yes");
+}
+
+private static boolean getUserConsentForReplay() {
+    System.out.print("Do you want to play again? (yes/no): ");
+    String consent = scanner.next().toLowerCase();
+    return consent.equals("yes");
+}
 }
