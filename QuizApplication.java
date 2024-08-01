@@ -22,4 +22,6 @@ public class QuizApplication {
     private static final int timeLimit = 15; // Time limit in seconds for each question
     private static final int questionCount = 5; // Number of questions to ask
 
+    private static final Map<String, User> userMap = new HashMap<>();
+
 }
