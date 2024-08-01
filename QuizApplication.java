@@ -140,4 +140,17 @@ private static int getUserAnswer() {
         }
     }
 }
+
+private static void evaluateAnswer(String[] question, int answer) {
+    int correctAnswerIndex = Integer.parseInt(question[5]);
+    String correctAnswer = question[correctAnswerIndex];
+    if (answer == correctAnswerIndex) {
+        System.out.println("Correct!");
+        score++;
+    } else if (answer == 0) {
+        System.out.println("No answer provided. The correct answer is " + correctAnswer + ".");
+    } else {
+        System.out.println("Incorrect. The correct answer is " + correctAnswer + ".");
+    }
+}
 }
