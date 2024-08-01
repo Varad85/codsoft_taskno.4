@@ -24,4 +24,9 @@ public class QuizApplication {
 
     private static final Map<String, User> userMap = new HashMap<>();
 
+    public static void main(String[] args) {
+        while (true) {
+            String userName = getUserName();
+            User currentUser = userMap.getOrDefault(userName, new User(userName));
 }
+    }
