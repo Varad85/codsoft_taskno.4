@@ -168,4 +168,36 @@ private static void displayResult(List<String[]> questions, User currentUser) {
     System.out.println("Number of attempts: " + currentUser.getAttempts());
     System.out.println("Average score: " + currentUser.getAverageScore());
 }
+
+private static class User {
+    private final String name;
+    private int attempts;
+    private int totalScore;
+
+    public User(String name) {
+        this.name = name;
+        this.attempts = 0;
+        this.totalScore = 0;
+    }
+
+    public void incrementAttempts() {
+        attempts++;
+    }
+
+    public void addScore(int score) {
+        totalScore += score;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAttempts() {
+        return attempts;
+    }
+
+    public double getAverageScore() {
+        return (double) totalScore / attempts;
+    }
+}
 }
