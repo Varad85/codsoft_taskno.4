@@ -41,5 +41,17 @@ public class QuizApplication {
             for (String[] question : questions) {
                 presentQuestion(question);
             }
-}
+
+            currentUser.incrementAttempts();
+            currentUser.addScore(score);
+            userMap.put(userName, currentUser);
+
+            displayResult(questions, currentUser);
+
+            if (!getUserConsentForReplay()) {
+                System.out.println("Thank you for playing!");
+                break;
+            }
     }
+}
+}
