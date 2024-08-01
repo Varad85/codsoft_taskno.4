@@ -13,4 +13,13 @@ public class QuizApplication {
         new String[]{"What is the capital of China?", "Shanghai", "Beijing", "Guangzhou", "Shenzhen", "2"},
         new String[]{"What is the capital of India?", "Mumbai", "New Delhi", "Bangalore", "Chennai", "2"}
     );
+
+    private static int score = 0;
+    private static final Scanner scanner = new Scanner(System.in);
+    private static Timer timer;
+    private static boolean isAnswered = false;
+    private static boolean isTimeUp = false;
+    private static final int timeLimit = 15; // Time limit in seconds for each question
+    private static final int questionCount = 5; // Number of questions to ask
+
 }
