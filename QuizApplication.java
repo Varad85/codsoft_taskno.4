@@ -85,4 +85,9 @@ private static boolean getUserConsentForReplay() {
     String consent = scanner.next().toLowerCase();
     return consent.equals("yes");
 }
+
+private static List<String[]> getRandomQuestions(int count) {
+    Collections.shuffle(questionPool);
+    return questionPool.subList(0, count);
+}
 }
